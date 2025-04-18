@@ -17,3 +17,5 @@ the function and run automatically when you commit through a GitHub action.
 ## Runtime Analysis
 
 What is the worst-case big $\Theta$ time complexity of your algorithm?
+
+When finding the worst-case time complexity, looking at the beginning, we go over each vertex in graph 1 and 2 adding them to another array, so O(V+V).  We sort these arrays using bubble sort, which is a time complexity of O(V^2). Next we check if the degrees are the same, this gives us a time complexity of O(V).  Next, we find all the permutations, which causes a time complexity of O(V!), since we have a v factorial number of possibilities the graph could be in. Nex we go over each permutation, checking each vertex can be mapped to another and follow the same structure. This causes a runtime of O(E+V) for each permutation, since we much check the vertex and the next vertices, edges it is connected to all match up. Once we do all this we can check that the two graphs are isomorphic. Ignoring constant factors and factors that do not affect runtime as much, we get a runtime of big $\Theta$(V! * (E+V)), since for each permutation, we must check that vertex’s structure.
